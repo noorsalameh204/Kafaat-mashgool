@@ -38,6 +38,7 @@
         }
 
         * {
+            box-sizing: border-box;
             margin: 0px;
             padding: 0px;
            
@@ -63,31 +64,42 @@
             color: #040c24d3;
             font-size: 1.5rem;
         }
-        h1{
+        h1{ 
              font-family: 'Space Grotesk', sans-serif;
             line-height: 1.1;
             color: #040c24d3;
-            font-size: 28rem;
+            font-size:clamp(2rem, 5vw, 4rem) ;
         }
+        
         .section-title {
           
          text-align: center;
          width: fit-content;
-         margin-left: 350px;
+         margin: 0 auto;
 
         }
         .hero-text{
-         display: flex;
+             text-align: center;
+         width: fit-content;
+         margin: 0 auto;
+         /*display: flex;
          flex-direction: column;
          align-items: center;
          justify-content: center;
          text-align: center;
-         width: 100%;
-         margin-left: 300px;
+         width: 100%;*/
+         /*margin-left: 300px;*/
+        /* margin: 0 auto;
+         padding: 0px 20px;
+
         max-width: 1000px;
-        margin-top: -60px;
+        margin-top: -60px;*/
         }
-       
+       p.hero-text{
+         text-align: center;
+         width: fit-content;
+         margin: 0 auto;
+       }
 
         h1.hero-title {
            /* padding: 50px;
@@ -129,12 +141,12 @@ border-color: #ffffff3b;
    
 }
         .container {
-          margin: 0 auto;
+         
            max-width: 1200px;
          width: 100%;
 
             margin: 0 auto;
-            padding: 0px;
+            padding: 0px 20px;
             border: 0px ;
             border-radius: 0px !important;
 
@@ -251,6 +263,12 @@ border-color: #ffffff3b;
     top: 50%;
     transform: translateY(-50%);
 }
+#stats-bar {
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
         .menu-toggle:hover {
             background: white;
             color: var(--bg-red);
@@ -339,11 +357,13 @@ transition: var(--transition);
 
         /* Hero */
         .hero {
-            padding: 180px 0 100px;
+            padding: 120px  20px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 80px;
             align-items: center;
+            text-align: center;
+            justify-content: center;
         }
 
         .hero-text h1 {
@@ -478,9 +498,9 @@ margin-right:auto ;
 }
 
 .top-links{
-    display: flex;
-    gap: 28px;
-    align-items: center;
+     flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
   
 
 }
@@ -523,11 +543,23 @@ margin-right:auto ;
         [dir="rtl"] .nav-list a:hover { transform: translateX(-10px); }
 
         /* Responsive */
-        @media (max-width: 1024px) {
-            .hero { grid-template-columns: 1fr; text-align: center; padding-top: 120px; gap: 40px; }
-            .hero-text h1 { font-size: 60px; }
-            .sidebar { width: 100%; }
-        }
+        
+            
+        @media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 120px 20px 60px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+  }
+}
         /* Counter Styles */
         .counter-btn {
             width: 28px;
@@ -615,7 +647,7 @@ margin-right:auto ;
             <div class="hero-text">
               
                 <h1 class="hero-title"> <span>KAFA'AT PROJECT</span>Mashghool <span class="ar">مشغول</span></h1>
-                <p id="hero-desc">Handmade with love — empowering women artisans across Jordan. Every purchase supports a family</p>
+                <p id="hero-desc"> Handmade with love — empowering women artisans across Jordan. Every purchase supports a family</p>
              <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
                   <div id="shop-section">
                     <a href="#products" class="btn btn-primary" id="hero-cta" style="display: flex; align-items: center; gap: 8px; border-radius: 12px; ">
