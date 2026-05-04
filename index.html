@@ -65,6 +65,9 @@
             font-size: 1.5rem;
         }
         h1{ 
+             /*text-align: center;
+         
+         margin: 0 auto;*/
              font-family: 'Space Grotesk', sans-serif;
             line-height: 1.1;
             color: #040c24d3;
@@ -74,59 +77,61 @@
         .section-title {
           
          text-align: center;
-         width: fit-content;
+         
          margin: 0 auto;
 
         }
+        
         .hero-text{
-             text-align: center;
-         width: fit-content;
-         margin: 0 auto;
-         /*display: flex;
-         flex-direction: column;
-         align-items: center;
-         justify-content: center;
-         text-align: center;
-         width: 100%;*/
-         /*margin-left: 300px;*/
-        /* margin: 0 auto;
-         padding: 0px 20px;
-
-        max-width: 1000px;
-        margin-top: -60px;*/
+             display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;  
+    text-align: center;
+    width: 100%;            
+    margin: 0 auto;
+          
         }
        p.hero-text{
+        
          text-align: center;
-         width: fit-content;
+         width: 100%;
          margin: 0 auto;
        }
 
         h1.hero-title {
-           /* padding: 50px;
-            font-size: 3rem !important;
-            margin-top: 0px;
-            font-size: 11px;*/
+           
+            font-size: 11px;
+             text-align: center;
+         width: 100%;
+         margin: 0 auto;
     font-weight:bold;
     letter-spacing: 3px;
-    
-    
     margin-bottom: 24px;
-         }
+        
+}
+
 h1.hero-title span {
-    
+     text-align: center;
+          width: 100%;
+         margin: 0 auto;
     font-size: 1rem !important;
     font-weight: 300;
 line-height: 3;   
 }
 h1.hero-title .ar {
+        text-align: center;
+             width: 100%;
+            margin: 0 auto;
     font-size: 1.5rem !important;
     line-height: 2rem;
      font-family: Space Grotesk, system-ui, sans-serif;
 }
 h1.hero-desc {
-    /*font-size: 1.25rem !important;
-    line-height: 1.75rem;*/
+    width: 100%;
 margin-top: 1.5rem;
+ text-align: center;  
+         margin: 0 auto;
 }
 .inline-flex{
 color: rgba(144, 25, 27, 0.9);
@@ -136,19 +141,23 @@ border-color: #ffffff3b;
 
 .btn-primary{
     padding: 30px;
+     text-align: center;
+         width: fit-content;
+         margin: 0 auto;
 }
 #hero-cta {border-radius: 0% ;
+     text-align: center;
+         width: fit-content;
+         margin: 0 auto;
    
 }
         .container {
-          text-align: center;
-         width: fit-content;
-         margin: 0 auto;
-          /* max-width: 1200px;
          
-*/
-            margin: 0 auto;
+          text-align: center !important;
+         margin:  0 auto;
+         width: 100%;
             padding: 0px 20px;
+            
             border: 0px ;
             border-radius: 0px !important;
 
@@ -177,17 +186,21 @@ border-color: #ffffff3b;
         .sub-nav-bar {
            
             top: 80px;
-            left: 0;
+           left :0;
             right: 0;
             background: rgba(144, 25, 27, 0.9);
             backdrop-filter: blur(20px);
             z-index: 999;
             border-bottom: 1px solid var(--glass-border);
-            padding: 10px 0;
+            padding: 10px 20px;
             transition: var(--transition);
+          display:flex;
+            justify-content: flex-start !important;
+            text-align: left !important;
+           
         }
 
-        header.scrolled + .sub-nav-bar {
+        header.scrolled  {
             top: 70px;
         }
 
@@ -195,7 +208,7 @@ border-color: #ffffff3b;
             width: 100%;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+           
         }
 
         .logo {
@@ -219,15 +232,21 @@ border-color: #ffffff3b;
             flex-direction: column;
             gap: 4px;
         }
+        
 
         .sub-nav {
-           display: flex;
+       
+           display:flex;
             gap: 24px;
             list-style: none;
-           
+            justify-content: flex-start ;
+            margin-right: auto;
+         text-align: left ;
+           padding-left: 0%;
         }
 
         .sub-nav a {
+            
             text-decoration: none;
             color: var(--muted);
             font-size: 13px;
@@ -236,7 +255,7 @@ border-color: #ffffff3b;
         }
 
         .sub-nav a:hover {
-            color: white;
+            color: rgb(255, 255, 255);
         }
 
         /* Hamburger Menu Icon */
@@ -359,6 +378,9 @@ transition: var(--transition);
 
         /* Hero */
         .hero {
+             text-align: center;
+        
+         margin: 0 auto;
             padding: 120px  20px;
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -373,7 +395,9 @@ transition: var(--transition);
             font-weight: 800;
             margin-bottom: 20px*/font-size: 3rem;
     line-height: 1;
-
+  text-align: center;
+         width: fit-content;
+         margin: 0 auto;
         }
 
         .hero-text h1 span {
@@ -382,17 +406,23 @@ transition: var(--transition);
             color: var(--accent);
             font-size: .875rem;
     line-height: 1.25rem;
+            text-align: center;
+            width: fit-content;
+            margin: 0 auto;
           
         }
 
         .hero-text p {
+             text-align: center;
+         width: fit-content;
+         margin: 0 auto;
             font-size: 20px;
             color: var(--muted);
             margin-bottom: 40px;
             max-width: 800px;
             width: 90%;
-margin-left: auto;
-margin-right:auto ;
+/*margin-left: auto;
+margin-right:auto ;*/
         }
 
         .hero-image-wrap {
@@ -549,9 +579,12 @@ margin-right:auto ;
             
         @media (max-width: 768px) {
   .hero {
+     text-align: center;
+         width: fit-content;
+         margin: 0 auto;
     grid-template-columns: 1fr;
     gap: 30px;
-    padding: 120px 20px 60px;
+   padding: 120px 20px 60px;
   }
 
   .hero-text h1 {
@@ -644,19 +677,18 @@ margin-right:auto ;
 
         <section class="container hero">
     <span class="watermark wm-left">K</span>
-        <span class="watermark wm-right">K</span>
+        
 
             <div class="hero-text">
               
                 <h1 class="hero-title"> <span>KAFA'AT PROJECT</span>Mashghool <span class="ar">مشغول</span></h1>
                 <p id="hero-desc"> Handmade with love — empowering women artisans across Jordan. Every purchase supports a family</p>
-             <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+             <div style="display: flex;gap: 20px;  flex-wrap: wrap; justify-content: center; align-items: center;">
                   <div id="shop-section">
                     <a href="#products" class="btn btn-primary" id="hero-cta" style="display: flex; align-items: center; gap: 8px; border-radius: 12px; ">
                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package h-5 w-5"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"></path><path d="M12 22V12"></path><path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"></path><path d="m7.5 4.27 9 5.15"></path></svg> Shop Now
                     </a>
                   </div>
-                          <span class="watermark wm-right">K</span>
 
                 </div>
             </div>
