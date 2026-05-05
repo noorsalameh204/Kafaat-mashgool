@@ -7,7 +7,7 @@
     <meta name="description" content="Laptop donation tracking CRM for Jordan Technology Center">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Readex+Pro:wght@300;400;600&display=swap" rel="stylesheet">
     
     
     <meta property="og:type" content="website" />
@@ -43,7 +43,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color:#90191b;
+            background-color:#a01c1e;
             color:#ffffff;
             line-height: 1.5;
             overflow-x: hidden;
@@ -108,8 +108,8 @@
             margin: 0 auto;
             font-weight: 800;
             letter-spacing: -2px;
-            margin-bottom: 24px;
-            color: #040c24d3;
+            margin-bottom: 8px; /* Added small space */
+            color: #1a1a1a;
             line-height: 1;
         }
 
@@ -118,23 +118,23 @@
             text-align: center;
             width: 100%;
             margin: 0 auto;
-            font-size: 14px !important;
+            font-size: 13px !important;
             font-weight: 600;
-            letter-spacing: 4px;
-            color: var(--muted);
-            margin-bottom: 10px;
+            letter-spacing: 3px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 12px;
             text-transform: uppercase;
         }
         h1.hero-title .ar {
             display: block;
             text-align: center;
             width: 100%;
-            margin: 10px auto 0;
-            font-size: 2.5rem !important;
+            margin: 8px auto 20px;
+            font-size: 1.3rem !important;
             line-height: 1.2;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 400;
-            color: var(--accent);
+            font-family: 'Readex Pro', sans-serif;
+            font-weight: 300;
+            color: rgba(255,255,255,0.9);
         }
 h1.hero-desc {
     width: 100%;
@@ -148,18 +148,24 @@ border-radius: 7px;
 border-color: #ffffff3b;
 }
 
-.btn-primary{
-    padding: 30px;
-     text-align: center;
-         width: fit-content;
-         margin: 0 auto;
-}
-#hero-cta {border-radius: 0% ;
-     text-align: center;
-         width: fit-content;
-         margin: 0 auto;
-   
-}
+        .btn-primary {
+            padding: 14px 32px;
+            text-align: center;
+            width: fit-content;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+        #hero-cta {
+            border-radius: 12px;
+            text-align: center;
+            width: fit-content;
+            margin: 0 auto;
+        }
 .container-hero{
     
     text-align: center !important;
@@ -182,7 +188,8 @@ border-color: #ffffff3b;
 
         /* Header */
         header {
-              width: 100%;
+           
+            width: 100%;
             top: 0;
             left: 0;
             right: 0;
@@ -201,14 +208,13 @@ border-color: #ffffff3b;
         }
 
         .sub-nav-bar {
-            top: 80px;
-            background: rgba(144, 25, 27, 0.9);
+            position: relative;
+            background:#a01c1e;
             backdrop-filter: blur(20px);
-            z-index: 999;
+            z-index: 997;
             border-bottom: 1px solid var(--glass-border);
             padding: 10px 0;
             transition: var(--transition);
-            
         }
 
         header.scrolled  {
@@ -217,7 +223,7 @@ border-color: #ffffff3b;
 
         .nav-content {
             width: 100%;
-            display: flex;
+           display: flex;
             justify-content: space-between;
             align-items: center;
         }
@@ -271,16 +277,17 @@ border-color: #ffffff3b;
             background: var(--glass);
             border: 1px solid var(--glass-border);
             color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
-            display: flex;
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: none; /* Hidden by default, shown on mobile */
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
             cursor: pointer;
             transition: var(--transition);
+            margin-left: 15px;
         }
 .watermark{
     position: absolute;
@@ -342,8 +349,8 @@ border-color: #ffffff3b;
     font-size: 0.9rem;
 }
         .menu-toggle:hover {
-            background: white;
-            color: var(--bg-red);
+            background: hsl(0 60% 40%);
+            color:#ffffffc5;
         }
 
 
@@ -355,77 +362,61 @@ border-color: #ffffff3b;
             border-radius: 4px;
         }
 
-        /* Sidebar Menu */
+        /* Dropdown that pushes content */
         .sidebar {
-           position:fixd;
-            top: 0;
-            right: -100%;
-            width: 380px;
-            height: 100%;
-            background: rgba(144, 25, 27, 0.98);
-            backdrop-filter: blur(30px);
-            z-index: 2000;
-            padding: 60px 40px;
-transition: var(--transition);
-            border-left: 1px solid var(--glass-border);
-            box-shadow: -20px 0 60px rgba(0,0,0,0.5);
+            position: relative;
+            width: 100%;
+            max-height: 0;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #90191b 0%, #a01c1e 100%);
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            border-bottom: 0px solid rgba(255,255,255,0.1);
         }
 
         .sidebar.open {
-            right: 0;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 30px;
-            right: 30px;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 40px;
-            cursor: pointer;
-        }
-
-        .sidebar h2 {
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--muted);
-            margin-bottom: 30px;
+            max-height: 400px; /* Enough for the links */
+            padding: 5px 24px 10px; /* Reduced top padding from 20px to 5px */
+            border-bottom-width: 1px;
         }
 
         .nav-list {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 5px; /* Reduced gap */
+            margin-bottom: 0px; /* Removed bottom margin */
         }
 
         .nav-list a {
             text-decoration: none;
             color: white;
-            font-size: 28px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            font-size: 14px; /* Reduced font size */
+            font-weight: 600;
+            padding: 8px 12px; /* Reduced padding */
+            border-radius: 10px;
+            transition: 0.2s;
+            opacity: 0.8;
+            display: block;
         }
 
-        .nav-list a:hover {
-            color: var(--accent);
-            transform: translateX(10px);
+        .nav-list a.active-link {
+            background: rgba(255, 255, 255, 0.15);
+            opacity: 1;
         }
 
-        .nav-list a span {
-            font-size: 11px;
-            font-weight: 400;
-            background: var(--glass);
-            padding: 4px 10px;
-            border-radius: 20px;
-            color: white;
+        .sidebar-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            margin-bottom: 30px;
+            width: 100%;
         }
+
+        /* Toggle Icon Animation */
+        .menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        .menu-toggle.open span:nth-child(2) { opacity: 0; }
+        .menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
         /* Hero */
         .hero {
@@ -440,9 +431,6 @@ transition: var(--transition);
         }
 
         .hero-text h1 {
-         /*   font-size: 80px;
-            font-weight: 800;
-            margin-bottom: 20px*/font-size: 3rem;
     line-height: 1;
   text-align: center;
          width: fit-content;
@@ -451,7 +439,6 @@ transition: var(--transition);
 
         .hero-text h1 span {
             display: block;
-           /* font-size: 44px;*/
             color: var(--accent);
             font-size: .875rem;
     line-height: 1.25rem;
@@ -463,15 +450,12 @@ transition: var(--transition);
 
         .hero-text p {
              text-align: center;
-         width: fit-content;
-         margin: 0 auto;
-            font-size: 20px;
-            color: var(--muted);
-            margin-bottom: 40px;
-            max-width: 800px;
-            width: 90%;
-/*margin-left: auto;
-margin-right:auto ;*/
+             width: fit-content;
+             margin: 20px auto 30px;
+             font-size: 17px;
+             color: rgba(255,255,255,0.8);
+             line-height: 1.6;
+             max-width: 600px;
         }
 
         .hero-image-wrap {
@@ -625,9 +609,8 @@ margin-right:auto ;*/
         }
 
         [dir="rtl"] { text-align: right; }
-        [dir="rtl"] .sidebar { left: -100%; right: auto; border-right: 1px solid var(--glass-border); border-left: none; }
-        [dir="rtl"] .sidebar.open { left: 0; }
-        [dir="rtl"] .nav-list a:hover { transform: translateX(-10px); }
+        [dir="rtl"] .sidebar { top: 0; }
+        [dir="rtl"] .sidebar.open { max-height: 400px; }
 
         /* Responsive */
         
@@ -649,7 +632,10 @@ margin-right:auto ;*/
                 font-size: 2.5rem;
             }
             .top-links {
-                display: none; /* Hide top links on mobile or use a menu */
+                display: none; 
+            }
+            .menu-toggle {
+                display: flex;
             }
             .watermark {
                 display: none;
@@ -749,12 +735,18 @@ margin-right:auto ;*/
                 
             </div>
             <nav class="top-links">
-                <a href="#https://jtc-laptop-tracker.lovable.app/jtc">JTC</a>
-                <a href="#https://jtc-laptop-tracker.lovable.app/mashghool">Mashghool</a>
-                <a href="#https://jtc-laptop-tracker.lovable.app/962" class="pill active">962</a>
-                <a href="#https://jtc-laptop-tracker.lovable.app/cmc">CMC</a>
-                <a href="#https://jtc-laptop-tracker.lovable.app/zhub">Z-Hub</a>
+                <a href="https://jtc-laptop-tracker.lovable.app/jtc">JTC</a>
+                <a href="https://jtc-laptop-tracker.lovable.app/mashghool">Mashghool</a>
+                <a href="https://jtc-laptop-tracker.lovable.app/962" class="pill active">962</a>
+                <a href="https://jtc-laptop-tracker.lovable.app/cmc">CMC</a>
+                <a href="https://jtc-laptop-tracker.lovable.app/zhub">Z-Hub</a>
             </nav>
+            
+            <button class="menu-toggle" id="menu-open" aria-label="Open Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
            
             
         </div>
@@ -762,12 +754,22 @@ margin-right:auto ;*/
         
     </header>
  
+    <aside id="sidebar" class="sidebar">
+        <nav class="nav-list">
+            <a href="https://jtc-laptop-tracker.lovable.app/jtc">JTC</a>
+            <a href="https://jtc-laptop-tracker.lovable.app/mashghool" class="active-link">Mashghool</a>
+            <a href="https://jtc-laptop-tracker.lovable.app/962">962</a>
+            <a href="https://jtc-laptop-tracker.lovable.app/cmc">CMC</a>
+            <a href="https://jtc-laptop-tracker.lovable.app/zhub">Z-Hub</a>
+        </nav>
+    </aside>
+
     <div class="sub-nav-bar">
         <div class="container">
             <nav class="sub-nav">
-                <a href="#hero-cta" id="nav-ShopNow">Shop</a>
-                <a href="#products" id="nav-products">Products</a>
-                <a href="#about" id="nav-about">About</a>
+                <a href="#shop-section" class="nav-shop-text">Shop</a>
+                <a href="#products" class="nav-products-text">Products</a>
+                <a href="#about" class="nav-about-text">About</a>
             </nav>
         </div>
     </div>
@@ -942,9 +944,11 @@ margin-right:auto ;*/
     <footer>
         <div class="container">
             <div class="logo-text" style="color: white; margin-bottom: 10px;">Kafa'at</div>
-            <p>Mashghool مشغولHandmade with ❤️ in Jordan. © 2026</p>
+            <p>Mashghool مشغول Handmade with ❤️ in Jordan. © 2026</p>
         </div>
     </footer>
+
+    
 
    
 
@@ -999,8 +1003,13 @@ margin-right:auto ;*/
         const openBtn = document.getElementById('menu-open');
         const closeBtn = document.getElementById('menu-close');
 
-        openBtn.onclick = () => sidebar.classList.add('open');
-        closeBtn.onclick = () => sidebar.classList.remove('open');
+        openBtn.onclick = () => {
+            sidebar.classList.toggle('open');
+            openBtn.classList.toggle('open');
+        };
+        
+        // Remove closeBtn logic since we're using toggle now
+        // closeBtn.onclick = () => sidebar.classList.remove('open');
 
         // Language Switch
         const langBtn = document.getElementById('lang-switch');
@@ -1062,10 +1071,14 @@ margin-right:auto ;*/
             document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
             langBtn.textContent = texts[lang].switch;
             
-            document.getElementById('header-kafaat').textContent = texts[lang].kafaat;
-            document.getElementById('nav-shop').textContent = texts[lang].shop;
-            document.getElementById('nav-products').textContent = texts[lang].products;
-            document.getElementById('nav-about').textContent = texts[lang].about;
+            document.querySelectorAll('.logo-text').forEach(el => {
+                if (el.id === 'header-kafaat' || el.closest('#sidebar')) {
+                    el.innerHTML = lang === 'ar' ? 'كفاءات <span>Kafa\'at</span>' : 'Kafa\'at <span>كفاءات</span>';
+                }
+            });
+            document.querySelectorAll('.nav-shop-text').forEach(el => el.textContent = texts[lang].shop);
+            document.querySelectorAll('.nav-products-text').forEach(el => el.textContent = texts[lang].products);
+            document.querySelectorAll('.nav-about-text').forEach(el => el.textContent = texts[lang].about);
             document.getElementById('sidebar-projects-title').textContent = texts[lang].projectsTitle;
             document.getElementById('sidebar-nav-title').textContent = texts[lang].navTitle;
             document.getElementById('hero-title').innerHTML = texts[lang].title;
@@ -1092,7 +1105,16 @@ margin-right:auto ;*/
                 const target = document.querySelector(this.getAttribute('href'));
                 if(target) {
                     sidebar.classList.remove('open');
-                    target.scrollIntoView({ behavior: 'smooth' });
+                    openBtn.classList.remove('open');
+                    
+                    const elementRect = target.getBoundingClientRect();
+                    const absoluteElementTop = elementRect.top + window.pageYOffset;
+                    const middle = absoluteElementTop - (window.innerHeight / 2) + (elementRect.height / 2);
+                    
+                    window.scrollTo({
+                        top: middle,
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
